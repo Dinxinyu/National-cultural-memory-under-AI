@@ -10,7 +10,6 @@ import shutil
 import traceback
 import threading
 import pyaudio
-import vosk
 import serial
 import serial.tools.list_ports
 from PIL import Image, ImageTk, ImageDraw, ImageFont
@@ -27,8 +26,8 @@ expected_char=''
 
 # ========== API Keys and URLs ==========
 # Tripo 3D API for 3D model generation (Updated)
-TRIPO_API_KEY = "tsk_LA1VKfEUep9vKHKaEqR4U8Y7EPXgSPSKTV9y_1rr_9C"
-TRIPO_BASE_URL = "https://api.tripo3d.ai/v2/openapi"
+TRIPO_API_KEY = ""
+TRIPO_BASE_URL = ""
 
 # 在上面这些行的后面添加以下会员配置：
 # ========== Tripo AI 会员配置 ==========
@@ -92,8 +91,6 @@ def create_member_optimized_session():
             "X-Member-Tier": "premium",
             "X-Concurrent-Enabled": "true"
         })
-
-        print("👑 已配置会员专属API优化")
 
     return session
 
